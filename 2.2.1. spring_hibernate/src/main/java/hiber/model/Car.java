@@ -7,11 +7,15 @@ import javax.persistence.*;
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Long id;
     @Column(name = "model")
     String model;
     @Column(name = "series")
     int series;
+    @OneToOne
+//    @JoinColumn(name = "user_id",  referencedColumnName = "id")
+    private User user;
+
 
     public Car() {
     }
@@ -21,11 +25,11 @@ public class Car {
         this.series = series;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
