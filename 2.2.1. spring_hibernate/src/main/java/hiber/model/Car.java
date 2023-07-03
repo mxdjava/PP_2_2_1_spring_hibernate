@@ -12,9 +12,6 @@ public class Car {
     String model;
     @Column(name = "series")
     int series;
-    @OneToOne
-//    @JoinColumn(name = "user_id",  referencedColumnName = "id")
-    private User user;
 
 
     public Car() {
